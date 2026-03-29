@@ -28,3 +28,13 @@ npm run build
 ```
 
 Cloudflare Pages should use `npm run build` with `dist/` as the output directory.
+
+## Cloudflare Worker Deploy
+
+```bash
+npm run cf:deploy
+```
+
+This project now includes a checked-in [wrangler.jsonc](./wrangler.jsonc) that serves the built `dist/` output as a single-page application when deployed with Workers.
+
+After deploy, attach `abcollective.punkcity.ai` to the `punkcity` Worker in Cloudflare under `Workers & Pages` -> `Settings` -> `Domains & Routes`.
