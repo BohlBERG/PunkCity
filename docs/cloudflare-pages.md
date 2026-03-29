@@ -18,7 +18,7 @@
 ## Worker Deploy
 
 - Deploy command: `npx wrangler deploy`
-- Checked-in config: [`wrangler.jsonc`](../wrangler.jsonc)
+- Checked-in config: [`wrangler.worker.jsonc`](../wrangler.worker.jsonc)
 - Asset directory: `dist`
 - SPA fallback: enabled through `not_found_handling = "single-page-application"`
 
@@ -43,3 +43,4 @@ If the subdomain is already attached to a Pages project, remove that binding fir
 - Save data is stored client-side in the browser.
 - Cloudflare Pages will rebuild automatically on every push to the production branch.
 - Worker deploys use the same built `dist/` output, but the runtime entry is managed by Wrangler and the Cloudflare Vite plugin.
+- Cloudflare Pages should use `npm run build` as the build command. If the dashboard is set to `npx vitepress build`, the deployment will fail because this repo is not a VitePress site.
